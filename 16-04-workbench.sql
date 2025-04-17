@@ -112,3 +112,20 @@ GROUP BY categoria;
 -- right join
 -- left join
 
+SELECT cliente.nome, pedidos.valor 
+FROM clientes
+INNER JOIN pedidos ON clientes.id = pedido.cliente_id;
+
+SELECT * FROM pedidos;
+SELECT * FROM clientes;
+
+-- inner join retorna todos os registros que tem correspondencia em ambas tabelas
+
+-- left join retorna todos os registros da tabela da esquerda e os registros da tabela da direita
+-- se n houver correspondencia os resultados serao null
+
+SELECT clientes.nome, pedidos.valor FROM pedidos
+LEFT JOIN clientes ON clientes.id = pedidos.cliente_id;
+
+SELECT clientes.nome, pedidos.valor FROM pedidos
+RIGHT JOIN clientes ON clientes.id = pedidos.cliente_id;
